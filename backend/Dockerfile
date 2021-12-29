@@ -1,4 +1,4 @@
-FROM node:17-alpine
+FROM node:14-alpine
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY . .
 
 EXPOSE 80
 
-VOLUME ["/app/node_modules"]
+ENV MONGODB_USERNAME=root
+ENV MONGODB_PASSWORD=secret
 
-CMD ["npm","start"]
-
+CMD ["npm", "start"]
